@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ConsumerConnect - Official Consumer Resources</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-container": "#4f3d00",
+                        "surface-variant": "#e5e2e1",
+                        "outline-variant": "#dbc0bf",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "tertiary": "#755b00",
+                        "on-secondary-fixed": "#1e1b15",
+                        "on-secondary-container": "#68645c",
+                        "on-secondary-fixed-variant": "#4a463f",
+                        "tertiary-fixed-dim": "#ecc246",
+                        "surface": "#fcf9f8",
+                        "secondary": "#625e56",
+                        "on-surface-variant": "#554242",
+                        "surface-container": "#f0eded",
+                        "primary": "#4d0710",
+                        "primary-fixed-dim": "#ffb3b2",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#584400",
+                        "on-primary-container": "#f08586",
+                        "outline": "#887271",
+                        "tertiary-fixed": "#ffe08e",
+                        "surface-tint": "#9b4245",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#e8e2d8",
+                        "primary-container": "#6b1e23",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#ffb3b2",
+                        "secondary-fixed": "#e8e2d8",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-bright": "#fcf9f8",
+                        "on-background": "#1c1b1b",
+                        "background": "#fcf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "on-primary-fixed": "#410008",
+                        "surface-container-low": "#f6f3f2",
+                        "on-surface": "#1c1b1b",
+                        "primary-fixed": "#ffdad9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#7c2b2f",
+                        "inverse-surface": "#313030",
+                        "surface-container-highest": "#e5e2e1",
+                        "secondary-fixed-dim": "#ccc6bc",
+                        "tertiary-container": "#cea62c",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-[64px]">
+<!-- TopNavBar -->
+<nav class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container fixed top-0 w-full z-50 border-b border-outline-variant/20 shadow-sm transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-[64px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-white flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+                ConsumerConnect
+            </a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-primary/80 hover:text-white transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-primary/80 hover:text-white transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md font-label-md text-label-md" href="#">Categories</a>
+<a class="text-on-primary/80 hover:text-white transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md font-label-md text-label-md" href="#">Forum Checker</a>
+<a class="text-tertiary-fixed font-bold border-b-2 border-tertiary-fixed pb-1 px-3 py-2 font-label-md text-label-md hover:bg-primary-container/10" href="#">Resources</a>
+<a class="text-on-primary/80 hover:text-white transition-colors hover:bg-primary-container/10 px-3 py-2 rounded-md font-label-md text-label-md" href="#">FAQs</a>
+</div>
+<!-- Search & Action -->
+<div class="flex items-center gap-4">
+<button aria-label="Search" class="hidden md:flex items-center justify-center text-on-primary/80 hover:text-white transition-colors p-2 hover:bg-primary-container/10 rounded-full">
+<span class="material-symbols-outlined">search</span>
+</button>
+<a class="hidden md:inline-flex items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md px-6 py-2 rounded-full hover:bg-tertiary-fixed-dim transition-colors" href="#">
+                    File Complaint
+                </a>
+<!-- Mobile Menu Button -->
+<button aria-label="Menu" class="md:hidden text-white p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-20 flex flex-col gap-16">
+<!-- Header Section -->
+<header class="max-w-3xl mx-auto text-center flex flex-col gap-4">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl text-primary font-bold">Official Consumer Resources</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Access official government portals, dispute resolution cells, and immediate assistance networks to safeguard your consumer rights.
+            </p>
+</header>
+<!-- Resources Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: National Consumer Helpline -->
+<div class="group relative bg-surface border border-primary/15 hover:border-primary/40 rounded-lg p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-1">
+<div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">support_agent</span>
+</div>
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<div class="flex flex-col gap-2 relative z-10 flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary font-semibold">National Consumer Helpline</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Immediate assistance for consumer grievances. Call the toll-free national helpline for guidance on filing a dispute or general consumer rights inquiries.</p>
+<div class="mt-4 flex items-center gap-2 text-tertiary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>Call 1915</span>
+</div>
+</div>
+<a class="mt-auto w-full inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-DEFAULT hover:bg-primary-container transition-colors relative z-10 shadow-sm group-hover:shadow-md" href="tel:1915">
+                    Call Now
+                </a>
+</div>
+<!-- Card 2: e-Daakhil Portal -->
+<div class="group relative bg-surface border border-primary/15 hover:border-primary/40 rounded-lg p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-1">
+<div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">computer</span>
+</div>
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">computer</span>
+</div>
+<div class="flex flex-col gap-2 relative z-10 flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary font-semibold">e-Daakhil Portal</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The official online platform for filing consumer complaints electronically. Submit documents, pay fees, and track your case status from anywhere.</p>
+</div>
+<a class="mt-auto w-full inline-flex items-center justify-center border border-primary text-primary font-label-md text-label-md px-6 py-3 rounded-DEFAULT hover:bg-primary/5 transition-colors relative z-10" href="#">
+                    Visit Portal
+                    <span class="material-symbols-outlined ml-2 text-[18px]">open_in_new</span>
+</a>
+</div>
+<!-- Card 3: Consumer Mediation Cell -->
+<div class="group relative bg-surface border border-primary/15 hover:border-primary/40 rounded-lg p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-1">
+<div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">handshake</span>
+</div>
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">handshake</span>
+</div>
+<div class="flex flex-col gap-2 relative z-10 flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary font-semibold">Consumer Mediation Cell</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">An alternative dispute resolution mechanism. Opt for mediation to resolve disputes amicably, faster, and often without the need for formal litigation.</p>
+</div>
+<a class="mt-auto w-full inline-flex items-center justify-center text-primary font-label-md text-label-md px-6 py-3 rounded-DEFAULT hover:bg-primary/5 transition-colors relative z-10 group/btn" href="#">
+                    Learn More
+                    <span class="material-symbols-outlined ml-2 text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Supplementary Info Banner -->
+<section class="mt-8 bg-surface-container-low border border-outline-variant/30 rounded-lg p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex-1 flex flex-col gap-4">
+<h4 class="font-headline-md text-headline-md text-primary font-bold">Need detailed guidance?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Our comprehensive knowledge base contains step-by-step guides on filing complaints, understanding specific consumer laws, and preparing evidence.</p>
+</div>
+<a class="shrink-0 bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md px-8 py-3 rounded-full hover:bg-tertiary-fixed-dim transition-colors shadow-sm" href="#">
+                Browse Knowledge Base
+            </a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface text-on-surface-variant dark:text-inverse-on-surface w-full mt-auto border-t border-outline-variant/30">
+<div class="flex flex-col md:flex-row justify-between items-center py-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-8 md:gap-4">
+<div class="flex flex-col items-center md:items-start gap-4">
+<a class="font-headline-md text-headline-md text-primary dark:text-primary-fixed flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+                     ConsumerConnect
+                </a>
+<p class="font-body-md text-body-md text-center md:text-left max-w-md opacity-90">
+                    © 2024 ConsumerConnect. All Rights Reserved. Compliant with Consumer Protection Act 2019.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-4">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary hover:underline decoration-tertiary opacity-90 hover:opacity-100 transition-all" href="#">B.Sc. Computer Science Community Engagement Project</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary hover:underline decoration-tertiary opacity-90 hover:opacity-100 transition-all" href="#">University of Mumbai</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary hover:underline decoration-tertiary opacity-90 hover:opacity-100 transition-all" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary hover:underline decoration-tertiary opacity-90 hover:opacity-100 transition-all" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

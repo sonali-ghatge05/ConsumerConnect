@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ConsumerConnect - Home</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from system prompt -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#eae7e7",
+                      "on-tertiary-container": "#4f3d00",
+                      "surface-variant": "#e5e2e1",
+                      "outline-variant": "#dbc0bf",
+                      "on-secondary": "#ffffff",
+                      "inverse-on-surface": "#f3f0ef",
+                      "tertiary": "#755b00",
+                      "on-secondary-fixed": "#1e1b15",
+                      "on-secondary-container": "#68645c",
+                      "on-secondary-fixed-variant": "#4a463f",
+                      "tertiary-fixed-dim": "#ecc246",
+                      "surface": "#fcf9f8",
+                      "secondary": "#625e56",
+                      "on-surface-variant": "#554242",
+                      "surface-container": "#f0eded",
+                      "primary": "#4d0710",
+                      "primary-fixed-dim": "#ffb3b2",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#584400",
+                      "on-primary-container": "#f08586",
+                      "outline": "#887271",
+                      "tertiary-fixed": "#ffe08e",
+                      "surface-tint": "#9b4245",
+                      "on-primary": "#ffffff",
+                      "secondary-container": "#e8e2d8",
+                      "primary-container": "#6b1e23",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#ffb3b2",
+                      "secondary-fixed": "#e8e2d8",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed": "#241a00",
+                      "surface-bright": "#fcf9f8",
+                      "on-background": "#1c1b1b",
+                      "background": "#fcf9f8",
+                      "surface-dim": "#dcd9d9",
+                      "on-primary-fixed": "#410008",
+                      "surface-container-low": "#f6f3f2",
+                      "on-surface": "#1c1b1b",
+                      "primary-fixed": "#ffdad9",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#7c2b2f",
+                      "inverse-surface": "#313030",
+                      "surface-container-highest": "#e5e2e1",
+                      "secondary-fixed-dim": "#ccc6bc",
+                      "tertiary-container": "#cea62c",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "container-max": "1280px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "margin-desktop": "40px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "60px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar Component -->
+<header class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container font-headline-md text-headline-md. Labels: font-label-md text-label-md fixed top-0 w-full z-50 border-b border-outline-variant/20 shadow-sm transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md font-bold text-white flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">gavel</span>
+                ConsumerConnect
+            </a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-tertiary-fixed font-bold border-b-2 border-tertiary-fixed pb-1" href="#">Home</a>
+<a class="text-on-primary/80 hover:text-white transition-colors hover:bg-primary-container/10 px-2 py-1 rounded" href="#">Categories</a>
+<a class="text-on-primary/80 hover:text-white transition-colors hover:bg-primary-container/10 px-2 py-1 rounded" href="#">Forum Checker</a>
+<a class="text-on-primary/80 hover:text-white transition-colors hover:bg-primary-container/10 px-2 py-1 rounded" href="#">Resources</a>
+<a class="text-on-primary/80 hover:text-white transition-colors hover:bg-primary-container/10 px-2 py-1 rounded" href="#">FAQs</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<!-- Search Icon (Search bar on right logic) -->
+<button class="text-on-primary/80 hover:text-white p-2 rounded hover:bg-primary-container/10 hidden md:block">
+<span class="material-symbols-outlined">search</span>
+</button>
+<!-- Trailing Primary Action -->
+<a class="hidden md:inline-flex items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md px-4 py-2 rounded-full hover:bg-tertiary-fixed-dim transition-colors shadow-sm" href="#">
+                    File Complaint
+                </a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-[80px]"> <!-- pt-20 to account for fixed header + spacing -->
+<!-- Hero Section -->
+<section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative z-10">
+<div class="md:col-span-8 lg:col-span-7 flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 bg-surface-container border border-outline-variant/30 rounded-full px-4 py-1.5 w-fit text-primary font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+                        Citizen-First Initiative
+                    </div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl text-primary leading-tight">
+                        Know Your Rights.<br/>
+                        Know Your Options.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                        Navigating consumer protection in India shouldn't be complex. We bridge the gap between understanding your legal safeguards and taking definitive action to resolve disputes. Your trusted institutional guide to fair resolution.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<a class="bg-primary text-white font-label-md text-label-md px-8 py-4 rounded-lg hover:bg-primary-container transition-colors shadow-sm text-center" href="#">
+                            Select Your Complaint Category
+                        </a>
+<a class="bg-transparent text-primary border border-primary/20 font-label-md text-label-md px-8 py-4 rounded-lg hover:bg-surface-container transition-colors text-center" href="#research">
+                            View Our Research
+                        </a>
+</div>
+</div>
+<!-- Decorative Graphic Area -->
+<div class="hidden md:block md:col-span-4 lg:col-span-5 relative h-full min-h-[400px]">
+<div class="absolute inset-0 bg-surface-container-low border border-outline-variant/20 rounded-2xl overflow-hidden">
+<img class="object-cover w-full h-full opacity-90" data-alt="A dignified, modern composition showing a stylized scales of justice or legal document sitting on a clean, light cream marble surface. Warm, high-key lighting casts soft shadows. Accents of deep burgundy and subtle gold reflect a professional, institutional aesthetic. The overall mood is authoritative yet accessible, fitting a modern consumer protection portal in India." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJHLDTSrtOQtU3wP63BJkqF-TnwJvL6ajfdGi1EAtNcRka4vkJf7fGMlEhHET7EUS0OLDFtBMrfARF4vdt4dIVGcBsjS1pDzgry6dT9Fn04RF32JsEbFxSOY2N5IptYHp7fhbZo5s_VbOZyUA5NF5uvbg3DB8nNHotM3dzEBxN9cPKvJoLO9HAzzrzV_k4mZeVFK8e0nzQGMMJRtKXhxzZXyjsloz6DOX3ACZKaA9eWOrS4N02yq8f0w"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<hr class="border-t border-outline-variant/30 my-8"/>
+</div>
+<!-- Research Section -->
+<section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="research">
+<div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 gap-6">
+<h2 class="font-headline-md text-headline-md text-primary">Our Research</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    We surveyed 28 individuals to understand the critical gap between knowing your rights and knowing how to effectively act on them.
+                </p>
+</div>
+<!-- Bento-style Layout for Research Data -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-5xl mx-auto">
+<!-- Main Chart Card -->
+<div class="lg:col-span-12 bg-surface border border-primary/15 rounded-xl p-8 shadow-[0_4px_24px_-8px_rgba(77,7,16,0.05)] hover:border-primary/30 transition-all duration-300">
+<h3 class="font-headline-md text-headline-md text-primary mb-8 border-b border-outline-variant/20 pb-4">The Knowledge vs. Action Gap</h3>
+<div class="flex flex-col gap-8 py-4">
+<!-- Aware Bar -->
+<div class="flex flex-col md:flex-row md:items-center gap-4">
+<div class="md:w-1/4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Aware of Rights</div>
+<div class="flex-grow flex items-center gap-4">
+<div class="h-10 bg-tertiary-container rounded-r-full" style="width: 89%;"></div>
+<span class="font-headline-md text-headline-md text-tertiary font-bold">89%</span>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex flex-col md:flex-row md:items-center gap-4">
+<div class="md:w-1/4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Know Where to File</div>
+<div class="flex-grow flex items-center gap-4">
+<div class="h-10 bg-primary rounded-r-full" style="width: 36%;"></div>
+<span class="font-headline-md text-headline-md text-primary font-bold">36%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stat Pills Row -->
+<div class="lg:col-span-12 flex flex-col md:flex-row gap-4 justify-between mt-4">
+<!-- Pill 1 -->
+<div class="flex-1 bg-surface border border-primary/15 rounded-full px-6 py-4 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
+<span class="font-headline-md text-headline-md text-tertiary-container font-bold">7%</span>
+<span class="font-label-md text-label-md text-on-surface-variant">know about e-Daakhil</span>
+</div>
+<!-- Pill 2 -->
+<div class="flex-1 bg-surface border border-primary/15 rounded-full px-6 py-4 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
+<span class="font-headline-md text-headline-md text-tertiary-container font-bold">50%</span>
+<span class="font-label-md text-label-md text-on-surface-variant">don't know process</span>
+</div>
+<!-- Pill 3 -->
+<div class="flex-1 bg-surface border border-primary/15 rounded-full px-6 py-4 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow bg-surface-container-low">
+<span class="font-headline-md text-headline-md text-primary font-bold">71%</span>
+<span class="font-label-md text-label-md text-primary font-semibold">would use this platform</span>
+</div>
+</div>
+<div class="lg:col-span-12 text-center mt-12">
+<p class="font-headline-md text-headline-md text-primary italic border-l-4 border-tertiary-container pl-6 inline-block text-left">
+                        "This gap is exactly what this platform is built to close."
+                    </p>
+</div>
+</div>
+</section>
+<!-- About Project Note Section -->
+<section class="py-12 bg-surface-container-low border-t border-b border-outline-variant/20 mt-12">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
+<span class="material-symbols-outlined text-primary text-[32px]">school</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-1">About This Project</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        B.Sc. Computer Science Community Engagement Project, University of Mumbai.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface text-on-surface-variant dark:text-inverse-on-surface font-body-md text-body-md. Labels: font-label-sm text-label-sm w-full mt-auto border-t border-outline-variant/30 flat no shadows opacity-90 hover:opacity-100 transition-opacity">
+<div class="flex flex-col md:flex-row justify-between items-center py-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-6">
+<!-- Brand Logo (Footer) -->
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed flex items-center gap-2">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">gavel</span>
+                 ConsumerConnect
+            </div>
+<!-- Links -->
+<nav class="flex flex-wrap justify-center gap-4 md:gap-6 text-center">
+<a class="text-on-surface-variant hover:text-primary hover:underline decoration-tertiary transition-colors" href="#">B.Sc. Computer Science Community Engagement Project</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline decoration-tertiary transition-colors" href="#">University of Mumbai</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline decoration-tertiary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline decoration-tertiary transition-colors" href="#">Terms of Service</a>
+</nav>
+<!-- Copyright -->
+<div class="font-label-sm text-label-sm text-center md:text-right text-on-surface-variant/80">
+                © 2024 ConsumerConnect. All Rights Reserved. Compliant with Consumer Protection Act 2019.
+            </div>
+</div>
+</footer>
+</body></html>
