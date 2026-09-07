@@ -1,0 +1,465 @@
+{
+  "faulty-product": {
+    "name": "Faulty Product",
+    "description": "Issues involving defective, damaged, unsafe or poor-quality products.",
+    "process": [
+      {
+        "step": 1,
+        "title": "Identify the issue",
+        "description": "Clearly identify the defect or problem with the product.",
+        "time": "Immediately"
+      },
+      {
+        "step": 2,
+        "title": "Collect documents",
+        "description": "Keep the bill, warranty, order details, photographs and other relevant evidence.",
+        "time": "1–2 days"
+      },
+      {
+        "step": 3,
+        "title": "Contact the seller or manufacturer",
+        "description": "Ask the seller or manufacturer to resolve the issue through repair, replacement or refund.",
+        "time": "Depends on response"
+      },
+      {
+        "step": 4,
+        "title": "Escalate if unresolved",
+        "description": "If the issue is not resolved, you may approach the appropriate consumer grievance mechanism.",
+        "time": "After allowing reasonable response time"
+      }
+    ],
+    "documents": [
+      {
+        "icon": "receipt_long",
+        "title": "Purchase Bill or Invoice",
+        "description": "Proof of purchase showing the product, seller and transaction details."
+      },
+      {
+        "icon": "verified",
+        "title": "Warranty or Guarantee Card",
+        "description": "Warranty or guarantee documents provided with the product."
+      },
+      {
+        "icon": "photo_camera",
+        "title": "Photographs or Videos",
+        "description": "Visual evidence clearly showing the defect or damage."
+      },
+      {
+        "icon": "mail",
+        "title": "Communication Records",
+        "description": "Emails, messages or letters exchanged with the seller or manufacturer."
+      }
+    ],
+    "remedies": [
+      {
+        "title": "Refund",
+        "description": "Full or partial refund of the amount paid for the product."
+      },
+      {
+        "title": "Repair",
+        "description": "Free repair of the defective product."
+      },
+      {
+        "title": "Replacement",
+        "description": "Replacement of the product with a new one of the same type."
+      },
+      {
+        "title": "Compensation",
+        "description": "Compensation for any loss or damage caused due to the defect."
+      }
+    ],
+    "laws": [
+      {
+        "section": "Consumer Protection Act, 2019",
+        "text": "Provides protection to consumers against defective goods and establishes mechanisms for dispute redressal."
+      },
+      {
+        "section": "Sale of Goods Act, 1930",
+        "text": "Contains provisions relating to the quality, fitness and sale of goods."
+      }
+    ],
+    "sample_letter": "I purchased [PRODUCT] from [SELLER] on [DATE]. The product has the following defect: [DESCRIBE ISSUE]. I request that the issue be resolved by [REPAIR / REPLACEMENT / REFUND]."
+  },
+
+  "service-deficiency": {
+    "name": "Service Deficiency",
+    "description": "Issues arising from inadequate, delayed, incomplete or deficient services.",
+    "process": [
+      {
+        "step": 1,
+        "title": "Identify the deficiency",
+        "description": "Record what service was promised and how the actual service fell short.",
+        "time": "Immediately"
+      },
+      {
+        "step": 2,
+        "title": "Collect documents",
+        "description": "Keep agreements, invoices, receipts, work orders and all related communications.",
+        "time": "1–2 days"
+      },
+      {
+        "step": 3,
+        "title": "Contact the service provider",
+        "description": "Raise the issue with the service provider and request a suitable resolution.",
+        "time": "Depends on response"
+      },
+      {
+        "step": 4,
+        "title": "Escalate if unresolved",
+        "description": "If the service provider does not resolve the issue, use the appropriate consumer grievance mechanism.",
+        "time": "After allowing reasonable response time"
+      }
+    ],
+    "documents": [
+      {
+        "icon": "description",
+        "title": "Service Agreement / Contract",
+        "description": "Written agreement or terms that specify the service to be provided."
+      },
+      {
+        "icon": "receipt_long",
+        "title": "Invoice or Payment Receipt",
+        "description": "Proof of payment made for the service."
+      },
+      {
+        "icon": "mail",
+        "title": "Communication Records",
+        "description": "Emails, chats, letters or call records with the service provider."
+      },
+      {
+        "icon": "photo_camera",
+        "title": "Evidence of Deficiency",
+        "description": "Photos, videos, screenshots or reports showing the poor or incomplete service."
+      }
+    ],
+    "remedies": [
+      {
+        "title": "Refund",
+        "description": "Refund of the amount paid for the deficient service."
+      },
+      {
+        "title": "Re-performance of Service",
+        "description": "The service provider may be directed to perform the service again properly."
+      },
+      {
+        "title": "Compensation",
+        "description": "Compensation for loss, inconvenience or additional expenses caused."
+      }
+    ],
+    "laws": [
+      {
+        "section": "Consumer Protection Act, 2019",
+        "text": "Provides protection against deficiency in services and establishes mechanisms for consumer dispute redressal."
+      }
+    ],
+    "sample_letter": "I availed [SERVICE] from [SERVICE PROVIDER] on [DATE]. The service was deficient because [DESCRIBE ISSUE]. I request [REMEDY]."
+  },
+
+  "billing-fraud": {
+    "name": "Billing Fraud",
+    "description": "Problems involving incorrect, unauthorized, duplicate or misleading billing and charges.",
+    "process": [
+      {
+        "step": 1,
+        "title": "Check the bill carefully",
+        "description": "Review the bill and identify any incorrect, duplicate or unauthorized charges.",
+        "time": "Immediately"
+      },
+      {
+        "step": 2,
+        "title": "Keep all evidence",
+        "description": "Save bills, receipts, payment records, statements and related communications.",
+        "time": "1–2 days"
+      },
+      {
+        "step": 3,
+        "title": "Raise the issue",
+        "description": "Contact the business or service provider and request correction of the billing error.",
+        "time": "Depends on response"
+      },
+      {
+        "step": 4,
+        "title": "Escalate if unresolved",
+        "description": "If the issue remains unresolved, use an appropriate grievance or consumer forum mechanism.",
+        "time": "After allowing reasonable response time"
+      }
+    ],
+    "documents": [
+      {
+        "icon": "receipt_long",
+        "title": "Original Bill / Invoice",
+        "description": "The bill that contains the disputed or incorrect charges."
+      },
+      {
+        "icon": "account_balance_wallet",
+        "title": "Payment Proof",
+        "description": "Bank statements, UPI receipts or payment confirmations."
+      },
+      {
+        "icon": "mail",
+        "title": "Communication Records",
+        "description": "Emails or messages sent to the company regarding the billing issue."
+      },
+      {
+        "icon": "description",
+        "title": "Previous Bills (if any)",
+        "description": "Earlier correct bills for comparison."
+      }
+    ],
+    "remedies": [
+      {
+        "title": "Refund of Excess Amount",
+        "description": "Refund of any excess or unauthorized amount charged."
+      },
+      {
+        "title": "Correction of Bill",
+        "description": "Correction of the bill and issuance of a revised statement."
+      },
+      {
+        "title": "Compensation",
+        "description": "Compensation for any financial loss or hardship caused by the incorrect billing."
+      }
+    ],
+    "laws": [
+      {
+        "section": "Consumer Protection Act, 2019",
+        "text": "Protects consumers against unfair trade practices including incorrect or misleading billing."
+      }
+    ],
+    "sample_letter": "I received a bill/invoice from [BUSINESS] dated [DATE] containing the following incorrect or unauthorized charge: [DESCRIBE CHARGE]. I request correction of the bill and [REFUND / OTHER REMEDY]."
+  },
+
+  "e-commerce": {
+    "name": "E-commerce",
+    "description": "Consumer issues related to online purchases, sellers, delivery, refunds, returns or digital transactions.",
+    "process": [
+      {
+        "step": 1,
+        "title": "Record the order details",
+        "description": "Note the order ID, product details, seller name, platform and date of purchase.",
+        "time": "Immediately"
+      },
+      {
+        "step": 2,
+        "title": "Collect evidence",
+        "description": "Save screenshots, invoices, delivery records, product photos and chat/email history.",
+        "time": "1–2 days"
+      },
+      {
+        "step": 3,
+        "title": "Contact the platform or seller",
+        "description": "Use the platform’s customer support, return/refund option or grievance mechanism.",
+        "time": "Depends on response"
+      },
+      {
+        "step": 4,
+        "title": "Escalate if unresolved",
+        "description": "If the issue is not resolved, approach the consumer commission or relevant online dispute resolution mechanism.",
+        "time": "After allowing reasonable response time"
+      }
+    ],
+    "documents": [
+      {
+        "icon": "shopping_cart",
+        "title": "Order Confirmation / Invoice",
+        "description": "Order ID, invoice and payment confirmation from the platform."
+      },
+      {
+        "icon": "local_shipping",
+        "title": "Delivery Proof",
+        "description": "Tracking details, delivery receipt or unboxing photos/videos."
+      },
+      {
+        "icon": "photo_camera",
+        "title": "Product Photographs",
+        "description": "Clear photos or videos showing the received product and any defect."
+      },
+      {
+        "icon": "mail",
+        "title": "Chat / Email Records",
+        "description": "Conversation history with the seller or platform support."
+      }
+    ],
+    "remedies": [
+      {
+        "title": "Refund",
+        "description": "Full or partial refund of the amount paid."
+      },
+      {
+        "title": "Replacement",
+        "description": "Replacement of the product with a new one."
+      },
+      {
+        "title": "Return",
+        "description": "Return of the product and refund as per the platform’s policy."
+      },
+      {
+        "title": "Compensation",
+        "description": "Compensation for delay, damage or extra costs incurred."
+      }
+    ],
+    "laws": [
+      {
+        "section": "Consumer Protection Act, 2019",
+        "text": "Includes specific provisions for e-commerce and protects consumers in online transactions."
+      },
+      {
+        "section": "Consumer Protection (E-Commerce) Rules, 2020",
+        "text": "Lays down duties of e-commerce entities and marketplace sellers."
+      }
+    ],
+    "sample_letter": "I placed order [ORDER ID] for [PRODUCT] from [PLATFORM/SELLER] on [DATE]. The issue is [DESCRIBE ISSUE]. I request [REFUND / REPLACEMENT / OTHER REMEDY]."
+  },
+
+  "banking-financial": {
+    "name": "Banking / Financial",
+    "description": "Consumer issues involving banking or financial services, unauthorized transactions, charges, loans or related deficiencies.",
+    "process": [
+      {
+        "step": 1,
+        "title": "Record the transaction",
+        "description": "Note the date, amount, reference number, account details and exact nature of the problem.",
+        "time": "Immediately"
+      },
+      {
+        "step": 2,
+        "title": "Collect documents",
+        "description": "Keep account statements, transaction receipts, SMS alerts, emails and any related correspondence.",
+        "time": "1–2 days"
+      },
+      {
+        "step": 3,
+        "title": "Contact the bank / provider",
+        "description": "Raise a formal complaint through the bank’s grievance redressal system or customer care.",
+        "time": "Depends on response"
+      },
+      {
+        "step": 4,
+        "title": "Escalate if unresolved",
+        "description": "If not resolved, approach the Banking Ombudsman, RBI or the appropriate consumer forum.",
+        "time": "After allowing reasonable response time"
+      }
+    ],
+    "documents": [
+      {
+        "icon": "account_balance",
+        "title": "Bank Statement / Passbook",
+        "description": "Relevant account statement showing the disputed transaction or charge."
+      },
+      {
+        "icon": "receipt_long",
+        "title": "Transaction Receipt / SMS Alert",
+        "description": "Confirmation SMS, email or receipt of the transaction in question."
+      },
+      {
+        "icon": "mail",
+        "title": "Complaint Acknowledgement",
+        "description": "Copy of the complaint lodged with the bank and any reference number given."
+      },
+      {
+        "icon": "description",
+        "title": "Related Documents",
+        "description": "Loan agreement, card statements or any other supporting papers."
+      }
+    ],
+    "remedies": [
+      {
+        "title": "Refund / Reversal",
+        "description": "Refund or reversal of unauthorized or excess amount charged."
+      },
+      {
+        "title": "Correction of Records",
+        "description": "Correction of account records and statements."
+      },
+      {
+        "title": "Compensation",
+        "description": "Compensation for financial loss and mental harassment."
+      }
+    ],
+    "laws": [
+      {
+        "section": "Consumer Protection Act, 2019",
+        "text": "Applies to banking and financial services as ‘services’ under the Act."
+      },
+      {
+        "section": "Banking Ombudsman Scheme / RBI Guidelines",
+        "text": "Provides an alternative grievance redressal mechanism for banking customers."
+      }
+    ],
+    "sample_letter": "I am writing regarding [TRANSACTION/SERVICE] dated [DATE] involving [BANK/FINANCIAL SERVICE PROVIDER]. The issue is [DESCRIBE ISSUE]. I request [REMEDY]."
+  },
+
+  "other": {
+    "name": "Other",
+    "description": "For consumer issues that do not clearly fit into the categories above.",
+    "process": [
+      {
+        "step": 1,
+        "title": "Identify the issue",
+        "description": "Clearly describe the problem and the outcome you expected.",
+        "time": "Immediately"
+      },
+      {
+        "step": 2,
+        "title": "Collect documents",
+        "description": "Keep all bills, receipts, agreements, photos and communication related to the issue.",
+        "time": "1–2 days"
+      },
+      {
+        "step": 3,
+        "title": "Contact the concerned party",
+        "description": "Raise the issue with the seller, service provider or organisation concerned.",
+        "time": "Depends on response"
+      },
+      {
+        "step": 4,
+        "title": "Escalate if unresolved",
+        "description": "If the issue is not resolved, approach the appropriate consumer grievance mechanism.",
+        "time": "After allowing reasonable response time"
+      }
+    ],
+    "documents": [
+      {
+        "icon": "receipt_long",
+        "title": "Bill / Invoice / Receipt",
+        "description": "Any proof of purchase or payment related to the issue."
+      },
+      {
+        "icon": "description",
+        "title": "Agreement or Terms",
+        "description": "Written terms, contract or policy documents if available."
+      },
+      {
+        "icon": "photo_camera",
+        "title": "Photographs or Screenshots",
+        "description": "Visual evidence of the problem."
+      },
+      {
+        "icon": "mail",
+        "title": "Communication Records",
+        "description": "All emails, messages or letters exchanged regarding the issue."
+      }
+    ],
+    "remedies": [
+      {
+        "title": "Refund",
+        "description": "Refund of the amount paid."
+      },
+      {
+        "title": "Repair / Replacement / Correction",
+        "description": "Repair, replacement or proper correction of the problem."
+      },
+      {
+        "title": "Compensation",
+        "description": "Compensation for loss or inconvenience caused."
+      }
+    ],
+    "laws": [
+      {
+        "section": "Consumer Protection Act, 2019",
+        "text": "Provides overall protection to consumers and mechanisms for dispute redressal."
+      }
+    ],
+    "sample_letter": "I am writing regarding [PRODUCT/SERVICE] obtained from [BUSINESS] on [DATE]. The issue is [DESCRIBE ISSUE]. I request [REMEDY]."
+  }
+}

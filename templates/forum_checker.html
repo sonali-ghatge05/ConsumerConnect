@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+
+{% block title %}Forum Checker - ConsumerConnect{% endblock %}
+
+{% set active_page = 'forum' %}
+
+{% block content %}
+<main class="flex-grow max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-12 md:py-20 flex flex-col gap-16">
+
+    <!-- Header Section -->
+    <section class="text-center max-w-2xl mx-auto space-y-4">
+        <h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary">Determine Your Jurisdiction</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">
+            Find out which Consumer Disputes Redressal Commission handles your case based on the value of goods or services paid as consideration.
+        </p>
+    </section>
+
+    <!-- Main Workspace: Form & Results -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Left Column: Form Input -->
+        <div class="lg:col-span-5 bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 relative overflow-hidden">
+            <!-- Decorative Top Border -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+
+            <h2 class="font-headline-md text-headline-md text-on-background mb-6 flex items-center gap-2">
+                <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">calculate</span>
+                Case Details
+            </h2>
+
+            <form class="space-y-6" onsubmit="event.preventDefault(); checkJurisdiction();">
+                <!-- Issue Description -->
+                <div class="space-y-2">
+                    <label class="block font-label-md text-label-md text-on-background" for="issueDescription">
+                        Briefly describe your issue (Optional)
+                    </label>
+                    <textarea class="w-full bg-surface border-b-2 border-outline-variant focus:border-primary focus:ring-0 rounded-t-DEFAULT transition-colors resize-none px-4 py-3"
+                              id="issueDescription"
+                              placeholder="e.g., Defective electronics, delayed service..."
+                              rows="3"></textarea>
+                </div>
+
+                <!-- Amount Involved -->
+                <div class="space-y-2">
+                    <label class="block font-label-md text-label-md text-on-background" for="amountInvolved">
+                        Enter the amount involved (₹) <span class="text-error">*</span>
+                    </label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-on-surface-variant font-body-lg text-body-lg">₹</span>
+                        <input class="w-full bg-surface border-b-2 border-outline-variant focus:border-primary focus:ring-0 rounded-t-DEFAULT transition-colors px-4 py-3 pl-8 text-lg font-medium"
+                               id="amountInvolved"
+                               placeholder="0.00"
+                               required
+                               type="number"
+                               min="0"
+                               step="0.01">
+                    </div>
+                    <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">
+                        Value of goods/services paid + compensation claimed.
+                    </p>
+                </div>
+
+                <!-- Submit Button -->
+                <button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-DEFAULT hover:bg-primary-container transition-colors shadow-sm flex justify-center items-center gap-2"
+                        type="submit">
+                    Check Jurisdiction
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Column: Results & Info -->
+        <div class="lg:col-span-7 space-y-8">
+
+            <!-- Result Card -->
+            <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 min-h-[250px] flex flex-col justify-center items-center text-center transition-all duration-300"
+                 id="resultCard">
+
+                <!-- Default State -->
+                <div class="space-y-4 opacity-100 transition-opacity duration-300" id="defaultState">
+                    <span class="material-symbols-outlined text-4xl text-outline" style="font-variation-settings: 'FILL' 0;">account_balance</span>
+                    <h3 class="font-headline-md text-headline-md text-on-surface-variant">Awaiting Input</h3>
+                    <p class="text-on-surface-variant/80 max-w-sm mx-auto">
+                        Enter the dispute amount in the form to determine the appropriate forum for your complaint.
+                    </p>
+                </div>
+
+                <!-- Active Result State (Hidden Initially) -->
+                <div class="hidden flex flex-col items-center space-y-6 w-full" id="activeState">
+                    <div class="inline-flex items-center gap-2 bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-4 py-1.5 rounded-full">
+                        <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Jurisdiction Determined
+                    </div>
+                    <h3 class="font-headline-lg text-headline-lg text-primary mb-2" id="forumName">District Commission</h3>
+                    <div class="w-full h-px bg-outline-variant/30 my-4"></div>
+                    <div class="w-full grid grid-cols-2 gap-4 text-left">
+                        <div>
+                            <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Applicable For</p>
+                            <p class="font-body-md text-body-md text-on-background font-medium" id="forumRange">Claims up to ₹50 Lakhs</p>
+                        </div>
+                        <div>
+                            <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Next Step</p>
+                            <p class="font-body-md text-body-md text-on-background font-medium">File via e-Daakhil or locally</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How Jurisdiction Is Determined (Your addition) -->
+            <div class="bg-surface border border-outline-variant/20 rounded-xl p-6">
+                <h3 class="font-headline-md text-headline-md text-primary mb-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined">info</span>
+                    How is this decided?
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    The appropriate Consumer Commission is determined based on the value of
+                    goods or services paid as consideration, according to the applicable
+                    consumer commission jurisdiction rules.
+                </p>
+            </div>
+
+            <!-- What Should I Do Next (Your addition) -->
+            <div class="bg-secondary-container border border-outline-variant/30 rounded-xl p-6">
+                <h3 class="font-headline-md text-headline-md text-on-secondary-container mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                    What should I do next?
+                </h3>
+                <ol class="space-y-3 font-body-md text-body-md text-on-secondary-container/80">
+                    <li class="flex gap-3">
+                        <span class="font-semibold text-primary">1.</span>
+                        Keep your invoice, receipt and other supporting documents.
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="font-semibold text-primary">2.</span>
+                        Contact the seller or service provider where appropriate.
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="font-semibold text-primary">3.</span>
+                        If the issue remains unresolved, learn about the available consumer
+                        grievance mechanisms.
+                    </li>
+                </ol>
+            </div>
+
+            <!-- e-Jagriti Info Section -->
+            <div class="bg-secondary-container border border-outline-variant/30 rounded-xl p-8 flex flex-col md:flex-row items-center md:items-start gap-6">
+                <div class="shrink-0 bg-surface rounded-full p-4 border border-outline-variant/40 shadow-sm">
+                    <img class="w-16 h-16 object-contain rounded-full"
+                         data-alt="A highly detailed illustration of a digital portal symbolizing government e-filing. The scene features glowing, stylized document icons emerging from a laptop screen against a clean, warm cream background. The lighting is soft and modern, highlighting a gold and deep maroon color palette. The aesthetic is professional, secure, and trustworthy, fitting a modern Indian legal tech platform."
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlq9gRruMYKd9AimZnbgiD1M3VKU9w4Yf-nbSaTv74YIuBHezcf6CeVLT6rCADBaa--KCvmEafj0wDREce8DSlBpeg4VISsetWQTsG0b_RVTNVGpKc6fTYYpd5F-pys8ryXnscFHShC_bSnKStvYx0RbgVZffBBV6Y4gaE8em2w9HXS72Iz-HOaniHDWkAD5jSX7Mo9-p25sAtiBeo5sgCchZNEcbsvWm0ykCHXqhi9ZmPk_o8Jcxx2g"/>
+                </div>
+                <div class="flex-grow text-center md:text-left space-y-3">
+                    <h3 class="font-headline-md text-headline-md text-on-secondary-container">Filing via e-Jagriti</h3>
+                    <p class="font-body-md text-body-md text-on-secondary-container/80">
+                        The e-Jagriti portal empowers consumers and their advocates to file consumer complaints online from anywhere, facilitating payment of requisite fees and tracking case status seamlessly.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://e-jagriti.gov.in/" target="_blank" rel="noopener noreferrer"
+                           class="bg-transparent border border-primary text-primary font-label-md text-label-md px-5 py-2.5 rounded-DEFAULT hover:bg-primary/5 transition-colors inline-flex items-center gap-2">
+                            Visit e-Jagriti Portal
+                            <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jurisdiction Guide Section -->
+    <section class="border-t border-outline-variant/30 pt-16">
+        <h2 class="font-headline-lg text-headline-lg text-center text-primary mb-10">Jurisdiction Reference Guide</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- District -->
+            <div class="bg-surface border border-outline-variant/20 rounded-xl p-6 hover:border-outline-variant/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+                    <span class="material-symbols-outlined">maps_home_work</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">District Commission</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    Handles complaints where the value of goods or services paid as consideration does not exceed <strong>₹50 Lakhs</strong>.
+                </p>
+            </div>
+
+            <!-- State -->
+            <div class="bg-surface border border-outline-variant/20 rounded-xl p-6 hover:border-outline-variant/50 transition-colors">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+                    <span class="material-symbols-outlined">account_balance</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">State Commission</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    Handles complaints where the value exceeds <strong>₹50 Lakhs</strong> but does not exceed <strong>₹2 Crores</strong>.
+                </p>
+            </div>
+
+            <!-- National -->
+            <div class="bg-surface border border-outline-variant/20 rounded-xl p-6 hover:border-outline-variant/50 transition-colors relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <span class="material-symbols-outlined text-6xl">gavel</span>
+                </div>
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+                    <span class="material-symbols-outlined">balance</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">National Commission</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    Apex body handling complaints where the value exceeds <strong>₹2 Crores</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awareness Disclaimer (Your addition) -->
+    <div class="border-t border-outline-variant/30 pt-8 text-center">
+        <p class="font-label-sm text-label-sm text-on-surface-variant max-w-3xl mx-auto">
+            <strong>Note:</strong> This tool provides general consumer-rights awareness information and does not constitute legal advice. Jurisdiction may depend on the facts and applicable rules of the case.
+        </p>
+    </div>
+
+</main>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    function checkJurisdiction() {
+        const amountInput = document.getElementById('amountInvolved').value;
+        const amount = parseFloat(amountInput);
+
+        if (isNaN(amount) || amount < 0) return;
+
+        const defaultState = document.getElementById('defaultState');
+        const activeState = document.getElementById('activeState');
+        const resultCard = document.getElementById('resultCard');
+        const forumName = document.getElementById('forumName');
+        const forumRange = document.getElementById('forumRange');
+
+        // Hide default, show result
+        defaultState.classList.add('hidden');
+        activeState.classList.remove('hidden');
+
+        // Subtle highlight effect
+        resultCard.classList.add('shadow-[0_0_16px_rgba(77,7,16,0.05)]', 'border-primary/40');
+        setTimeout(() => {
+            resultCard.classList.remove('shadow-[0_0_16px_rgba(77,7,16,0.05)]');
+        }, 1000);
+
+        // Logic based on Consumer Protection Act, 2019 (current monetary limits)
+        // District Commission : up to ₹50 Lakh
+        // State Commission    : > ₹50 Lakh up to ₹2 Crore
+        // National Commission : > ₹2 Crore
+        if (amount <= 5000000) {
+            forumName.innerText = "District Commission";
+            forumRange.innerText = "Claims up to ₹50 Lakhs";
+        } else if (amount <= 20000000) {
+            forumName.innerText = "State Commission";
+            forumRange.innerText = "₹50 Lakhs to ₹2 Crores";
+        } else {
+            forumName.innerText = "National Commission";
+            forumRange.innerText = "Claims exceeding ₹2 Crores";
+        }
+    }
+</script>
+{% endblock %}
