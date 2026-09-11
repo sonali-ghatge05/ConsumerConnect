@@ -1,0 +1,330 @@
+{% extends "base.html" %}
+
+{% block title %}About ConsumerConnect{% endblock %}
+
+{% set active_page = 'about' %}
+
+{% block content %}
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-20 relative">
+
+    <!-- Subtle Logo Watermark -->
+    <div class="absolute top-24 right-4 md:right-12 opacity-[0.12] pointer-events-none select-none hidden md:block">
+        <span class="material-symbols-outlined text-[180px] text-primary" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+    </div>
+
+    <!-- 1. HERO / PAGE INTRODUCTION -->
+    <header class="text-center max-w-3xl mx-auto mb-16 relative z-10">
+        <h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary mb-4">About ConsumerConnect</h1>
+        <p class="font-headline-md text-headline-md text-tertiary mb-6">Know Your Rights. Know Your Options.</p>
+        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            ConsumerConnect is an interactive digital resource developed as part of our Community Engagement Project. 
+            It aims to improve practical awareness of consumer rights and grievance mechanisms so that citizens can move from knowing their rights to taking informed action.
+        </p>
+    </header>
+
+    <!-- 2. WHY WE CREATED CONSUMERCONNECT -->
+    <section class="mb-20 relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Why We Created ConsumerConnect</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+                Our primary survey revealed a clear gap between awareness and action.
+            </p>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div class="bg-surface border border-primary/15 rounded-xl p-6 text-center hover:border-primary/30 transition-colors">
+                <p class="font-headline-lg text-headline-lg text-tertiary font-bold mb-2">89%</p>
+                <p class="font-label-md text-label-md text-on-surface-variant">were aware that consumers have legal rights in India</p>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl p-6 text-center hover:border-primary/30 transition-colors">
+                <p class="font-headline-lg text-headline-lg text-primary font-bold mb-2">36%</p>
+                <p class="font-label-md text-label-md text-on-surface-variant">knew where to actually file a complaint</p>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl p-6 text-center hover:border-primary/30 transition-colors">
+                <p class="font-headline-lg text-headline-lg text-tertiary font-bold mb-2">7%</p>
+                <p class="font-label-md text-label-md text-on-surface-variant">were aware of the e-Jagriti online filing portal</p>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl p-6 text-center hover:border-primary/30 transition-colors">
+                <p class="font-headline-lg text-headline-lg text-primary font-bold mb-2">50%</p>
+                <p class="font-label-md text-label-md text-on-surface-variant">cited not knowing the process as a major barrier</p>
+            </div>
+        </div>
+
+        <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 text-center max-w-3xl mx-auto">
+            <p class="font-headline-md text-headline-md text-primary italic mb-3">
+                “Consumers may know that they have rights, but many do not know how to exercise them.”
+            </p>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+                ConsumerConnect was created to help bridge this awareness-to-action gap by turning complex legal information into clear, practical guidance.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. WHAT IS CONSUMERCONNECT? -->
+    <section class="mb-20 relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-4">What is ConsumerConnect?</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+                Instead of presenting long legal text, ConsumerConnect organises information into interactive sections that guide users step by step.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-surface border border-primary/15 rounded-xl p-5 flex items-start gap-3">
+                <span class="material-symbols-outlined text-tertiary text-[24px]">category</span>
+                <div>
+                    <p class="font-label-md text-label-md text-primary font-semibold">Category Selector</p>
+                    <p class="font-body-md text-body-md text-on-surface-variant text-sm">Choose the type of grievance</p>
+                </div>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl p-5 flex items-start gap-3">
+                <span class="material-symbols-outlined text-tertiary text-[24px]">account_tree</span>
+                <div>
+                    <p class="font-label-md text-label-md text-primary font-semibold">Complaint Process</p>
+                    <p class="font-body-md text-body-md text-on-surface-variant text-sm">Step-by-step guidance</p>
+                </div>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl p-5 flex items-start gap-3">
+                <span class="material-symbols-outlined text-tertiary text-[24px]">folder</span>
+                <div>
+                    <p class="font-label-md text-label-md text-primary font-semibold">Documents Required</p>
+                    <p class="font-body-md text-body-md text-on-surface-variant text-sm">What to keep ready</p>
+                </div>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl p-5 flex items-start gap-3">
+                <span class="material-symbols-outlined text-tertiary text-[24px]">gavel</span>
+                <div>
+                    <p class="font-label-md text-label-md text-primary font-semibold">Available Remedies</p>
+                    <p class="font-body-md text-body-md text-on-surface-variant text-sm">Repair, refund & more</p>
+                </div>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl p-5 flex items-start gap-3">
+                <span class="material-symbols-outlined text-tertiary text-[24px]">menu_book</span>
+                <div>
+                    <p class="font-label-md text-label-md text-primary font-semibold">Relevant Laws</p>
+                    <p class="font-body-md text-body-md text-on-surface-variant text-sm">Key legal provisions</p>
+                </div>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl p-5 flex items-start gap-3">
+                <span class="material-symbols-outlined text-tertiary text-[24px]">calculate</span>
+                <div>
+                    <p class="font-label-md text-label-md text-primary font-semibold">Forum Checker</p>
+                    <p class="font-body-md text-body-md text-on-surface-variant text-sm">Find the right commission</p>
+                </div>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl p-5 flex items-start gap-3">
+                <span class="material-symbols-outlined text-tertiary text-[24px]">support_agent</span>
+                <div>
+                    <p class="font-label-md text-label-md text-primary font-semibold">Resources</p>
+                    <p class="font-body-md text-body-md text-on-surface-variant text-sm">Helplines & portals</p>
+                </div>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl p-5 flex items-start gap-3">
+                <span class="material-symbols-outlined text-tertiary text-[24px]">help</span>
+                <div>
+                    <p class="font-label-md text-label-md text-primary font-semibold">FAQs</p>
+                    <p class="font-body-md text-body-md text-on-surface-variant text-sm">Common questions answered</p>
+                </div>
+            </div>
+        </div>
+
+        
+    </section>
+
+    <!-- 4. HOW THE PROJECT WORKS -->
+    <section class="mb-20 relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-4">How the Project Works</h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-0">
+            <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md font-bold">1</div>
+                    <div class="w-px flex-grow bg-outline-variant/40 my-1"></div>
+                </div>
+                <div class="pb-8">
+                    <h3 class="font-headline-md text-headline-md text-primary mb-1">Survey</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">We conducted a primary survey to understand public awareness of consumer rights and grievance mechanisms.</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md font-bold">2</div>
+                    <div class="w-px flex-grow bg-outline-variant/40 my-1"></div>
+                </div>
+                <div class="pb-8">
+                    <h3 class="font-headline-md text-headline-md text-primary mb-1">Identify Awareness Gaps</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Analysis showed that many people know rights exist but do not know how or where to file a complaint.</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md font-bold">3</div>
+                    <div class="w-px flex-grow bg-outline-variant/40 my-1"></div>
+                </div>
+                <div class="pb-8">
+                    <h3 class="font-headline-md text-headline-md text-primary mb-1">Research Consumer Rights & Laws</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">We studied the Consumer Protection Act, 2019, official portals, and practical complaint procedures.</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md font-bold">4</div>
+                    <div class="w-px flex-grow bg-outline-variant/40 my-1"></div>
+                </div>
+                <div class="pb-8">
+                    <h3 class="font-headline-md text-headline-md text-primary mb-1">Design Information Structure</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Information was organised into clear categories, processes, documents, remedies, and FAQs for easy understanding.</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md font-bold">5</div>
+                    <div class="w-px flex-grow bg-outline-variant/40 my-1"></div>
+                </div>
+                <div class="pb-8">
+                    <h3 class="font-headline-md text-headline-md text-primary mb-1">Develop ConsumerConnect</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">The interactive website was built using HTML, CSS, JavaScript, Flask, and Jinja2.</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md font-bold">6</div>
+                </div>
+                <div>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-1">User Testing & Feedback</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">The resource is refined based on user feedback to improve clarity and usefulness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. OUR TEAM -->
+    <section class="mb-20 relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Our Team</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+                ConsumerConnect was developed by students of the Department of Computer Science as part of the Community Engagement Project.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Team Member 1 -->
+            <div class="bg-surface border border-primary/15 rounded-xl p-8 text-center hover:border-primary/30 transition-all hover:-translate-y-1">
+                <div class="w-20 h-20 mx-auto mb-5 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-4xl">person</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-1">Amrapali Dangre</h3>
+                <p class="font-label-sm text-label-sm text-tertiary mb-3">26TCS25</p>
+                <p class="font-label-md text-label-md text-on-surface-variant mb-3">Project Team Member</p>
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                    Contribution: [Add contribution here]
+                </p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="bg-surface border border-primary/15 rounded-xl p-8 text-center hover:border-primary/30 transition-all hover:-translate-y-1">
+                <div class="w-20 h-20 mx-auto mb-5 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-4xl">person</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-1">Sonali Ghatge</h3>
+                <p class="font-label-sm text-label-sm text-tertiary mb-3">26TCS26</p>
+                <p class="font-label-md text-label-md text-on-surface-variant mb-3">Project Team Member</p>
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                    Contribution: [Add contribution here]
+                </p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="bg-surface border border-primary/15 rounded-xl p-8 text-center hover:border-primary/30 transition-all hover:-translate-y-1">
+                <div class="w-20 h-20 mx-auto mb-5 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-4xl">person</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-1">Dhanshree Salunkhe</h3>
+                <p class="font-label-sm text-label-sm text-tertiary mb-3">26TCS36</p>
+                <p class="font-label-md text-label-md text-on-surface-variant mb-3">Project Team Member</p>
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                    Contribution: [Add contribution here]
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PROJECT OBJECTIVES -->
+    <section class="mb-20 relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Project Objectives</h2>
+        </div>
+        <div class="bg-surface border border-primary/15 rounded-xl p-8 max-w-3xl mx-auto">
+            <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-tertiary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-body-md text-body-md text-on-surface-variant">Study public awareness of consumer rights and grievance mechanisms.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-tertiary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-body-md text-body-md text-on-surface-variant">Identify gaps and barriers that prevent consumers from exercising their rights.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-tertiary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-body-md text-body-md text-on-surface-variant">Develop an interactive website explaining complaint processes, documentation, and remedies.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-tertiary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-body-md text-body-md text-on-surface-variant">Apply web development technologies to address a real community need.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-tertiary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-body-md text-body-md text-on-surface-variant">Evaluate the usefulness of the resource through user feedback.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 7. TECHNOLOGY -->
+    <section class="mb-20 relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Technology</h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
+            <div class="bg-surface border border-primary/15 rounded-xl px-6 py-4 text-center min-w-[140px]">
+                <p class="font-label-md text-label-md text-primary font-semibold">Frontend</p>
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">HTML, CSS, JavaScript</p>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl px-6 py-4 text-center min-w-[140px]">
+                <p class="font-label-md text-label-md text-primary font-semibold">Backend</p>
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Flask (Python)</p>
+            </div>
+            <div class="bg-surface border border-primary/15 rounded-xl px-6 py-4 text-center min-w-[140px]">
+                <p class="font-label-md text-label-md text-primary font-semibold">Templating</p>
+                <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Jinja2</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CEP / ACADEMIC INFORMATION -->
+    <section class="mb-16 relative z-10">
+        <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-8 md:p-10 text-center max-w-3xl mx-auto">
+            <p class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest mb-2">Community Engagement Project (CEP)</p>
+            <h3 class="font-headline-md text-headline-md text-primary mb-2">Technology for Consumer Rights Awareness</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-1">Department of Computer Science</p>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-4">Ismail Yusuf College • Academic Year 2026–27</p>
+            <div class="border-t border-outline-variant/30 pt-4 mt-4">
+                <p class="font-label-md text-label-md text-on-surface-variant">
+                    Amrapali Dangre – 26TCS25 &nbsp;•&nbsp; Sonali Ghatge – 26TCS26 &nbsp;•&nbsp; Dhanshree Salunkhe – 26TCS36
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. DISCLAIMER -->
+    <div class="border-t border-outline-variant/30 pt-8 text-center relative z-10">
+        <p class="font-label-sm text-label-sm text-on-surface-variant max-w-3xl mx-auto">
+            <strong>Disclaimer:</strong> ConsumerConnect provides general consumer-rights awareness information and does not constitute legal advice. Information and applicable procedures may vary depending on the facts and current rules of a case.
+        </p>
+    </div>
+
+</main>
+{% endblock %}

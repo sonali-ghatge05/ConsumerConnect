@@ -38,10 +38,13 @@ def resources():
     return render_template('resources.html')
 
 
-@app.route("/faq")
-def faq():
-    return "FAQ page coming soon"
+@app.route('/faqs')
+def faqs():
+    return render_template('faqs.html')
 
+@app.route('/About')
+def about():
+    return render_template('about.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

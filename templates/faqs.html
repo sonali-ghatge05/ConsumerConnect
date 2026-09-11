@@ -1,0 +1,354 @@
+{% extends "base.html" %}
+
+{% block title %}ConsumerConnect - FAQs{% endblock %}
+
+{% set active_page = 'faqs' %}
+
+{% block extra_head %}
+<style>
+    .accordion-content {
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .accordion-item.active .accordion-content {
+        max-height: 500px;
+        opacity: 1;
+        padding-top: 16px;
+        padding-bottom: 24px;
+    }
+    .accordion-icon {
+        transition: transform 0.3s ease;
+    }
+    .accordion-item.active .accordion-icon {
+        transform: rotate(180deg);
+    }
+
+    /* Category buttons */
+    .category-btn {
+        position: relative;
+        border: 1px solid transparent;
+        transition: all 0.2s ease;
+    }
+
+    /* ACTIVE / SELECTED category */
+    .category-btn.active {
+        background-color: #f0eded; /* surface-container */
+        color: #4d0710; /* primary burgundy */
+        font-weight: 700;
+        border: 1px solid rgba(77, 7, 16, 0.25);
+        box-shadow: 0 2px 8px rgba(77, 7, 16, 0.08);
+    }
+
+    /* Left vertical indicator bar */
+    .category-btn.active::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        bottom: 8px;
+        width: 4px;
+        background: linear-gradient(to bottom, #4d0710, #cea62c);
+        border-radius: 0 4px 4px 0;
+    }
+
+    /* Inactive categories */
+    .category-btn:not(.active) {
+        color: #554242;
+        background-color: transparent;
+    }
+    .category-btn:not(.active):hover {
+        background-color: rgba(240, 237, 237, 0.6);
+    }
+
+    /* Check icon only visible when active */
+    .category-check {
+        display: none;
+        color: #cea62c; /* tertiary gold */
+    }
+    .category-btn.active .category-check {
+        display: inline-flex;
+    }
+    .category-btn.active .category-arrow {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+
+    <!-- Header Section -->
+    <div class="text-center mb-16 max-w-3xl mx-auto">
+        <h1 class="font-headline-xl text-headline-xl text-primary mb-6">Frequently Asked Questions</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">
+            Find answers to common questions about consumer rights, filing complaints, and navigating the dispute resolution process. Our goal is to make accessing justice clear and straightforward.
+        </p>
+    </div>
+
+    <!-- FAQ Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-gutter">
+
+        <!-- Sidebar / Categories -->
+        <aside class="lg:col-span-4 h-fit">
+            <div class="bg-surface-container-lowest border border-primary/15 rounded-xl p-6 sticky top-24">
+                <h2 class="font-headline-md text-headline-md text-primary mb-6">Categories</h2>
+                <ul class="space-y-2" id="categoryList">
+                    <li>
+                        <button class="category-btn active w-full text-left px-4 py-3 rounded-lg font-label-md text-label-md flex justify-between items-center group"
+                                data-category="general">
+                            <span>General Questions</span>
+                            <span class="flex items-center gap-1">
+                                <span class="material-symbols-outlined category-check text-[20px]">check_circle</span>
+                                <span class="material-symbols-outlined category-arrow text-tertiary-container text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="category-btn w-full text-left px-4 py-3 rounded-lg font-label-md text-label-md flex justify-between items-center group"
+                                data-category="filing">
+                            <span>Filing a Complaint</span>
+                            <span class="flex items-center gap-1">
+                                <span class="material-symbols-outlined category-check text-[20px]">check_circle</span>
+                                <span class="material-symbols-outlined category-arrow text-tertiary-container text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="category-btn w-full text-left px-4 py-3 rounded-lg font-label-md text-label-md flex justify-between items-center group"
+                                data-category="legal">
+                            <span>Legal Representation</span>
+                            <span class="flex items-center gap-1">
+                                <span class="material-symbols-outlined category-check text-[20px]">check_circle</span>
+                                <span class="material-symbols-outlined category-arrow text-tertiary-container text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="category-btn w-full text-left px-4 py-3 rounded-lg font-label-md text-label-md flex justify-between items-center group"
+                                data-category="fees">
+                            <span>Fees &amp; Costs</span>
+                            <span class="flex items-center gap-1">
+                                <span class="material-symbols-outlined category-check text-[20px]">check_circle</span>
+                                <span class="material-symbols-outlined category-arrow text-tertiary-container text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="mt-8 pt-6 border-t border-primary/15">
+                    <p class="font-label-sm text-label-sm text-on-surface-variant mb-4 uppercase tracking-wider">Need more help?</p>
+                    <div class="flex items-center gap-4 bg-tertiary/10 p-4 rounded-lg border border-tertiary/20">
+                        <span class="material-symbols-outlined text-tertiary text-3xl">support_agent</span>
+                        <div>
+                            <p class="font-label-md text-label-md text-on-surface">Contact Support</p>
+                            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Response within 24hrs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- FAQ Content Area -->
+        <div class="lg:col-span-8">
+
+            <!-- Dynamic Category Heading -->
+            <div class="mb-6">
+                <h2 id="categoryTitle" class="font-headline-md text-headline-md text-primary">General Questions</h2>
+                <p id="categorySubtitle" class="font-body-md text-body-md text-on-surface-variant mt-1">
+                    Common questions about consumer rights and awareness.
+                </p>
+            </div>
+
+            <!-- Accordion List -->
+            <div class="bg-surface-container-lowest border border-primary/15 rounded-xl overflow-hidden shadow-sm" id="faqContainer">
+                <!-- FAQ items rendered by JavaScript -->
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="mt-8 p-4 bg-surface-container-low border border-outline-variant/30 rounded-lg">
+                <p class="font-label-sm text-label-sm text-on-surface-variant text-center">
+                    <strong>Note:</strong> This page provides general consumer-rights awareness information only and does not constitute legal advice. Outcomes may depend on the specific facts of a case and the applicable rules.
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // FAQ Data organised by category
+    const faqData = {
+        general: [
+            {
+                question: "What are consumer rights?",
+                answer: "Under the Consumer Protection Act, 2019, consumers generally have rights such as the right to safety, the right to be informed, the right to choose, the right to be heard, the right to seek redressal, and the right to consumer education. These rights aim to protect consumers from unfair practices and defective goods or deficient services."
+            },
+            {
+                question: "What qualifies as a valid consumer dispute?",
+                answer: "A valid consumer dispute generally arises when there is a defect in goods purchased or a deficiency in services hired or availed. This can include unfair trade practices, misleading advertisements, charging above the MRP, or selling hazardous goods without proper warnings. The specific facts of each case determine whether a dispute falls under the consumer protection framework."
+            },
+            {
+                question: "What is ConsumerConnect?",
+                answer: "ConsumerConnect is a community engagement project developed to raise awareness about consumer rights in India. It provides educational information about complaint processes, available remedies, jurisdiction, and official resources so that citizens can better understand their options when facing consumer issues."
+            },
+            {
+                question: "Why is consumer awareness important?",
+                answer: "Consumer awareness helps people recognise unfair practices, understand their legal safeguards, and take informed steps when problems arise. Greater awareness can encourage fairer markets and make it easier for individuals to seek resolution through the appropriate channels."
+            }
+        ],
+        filing: [
+            {
+                question: "How do I file a consumer complaint?",
+                answer: "Generally, you may first try to resolve the issue with the seller or service provider. If that does not work, you can file a complaint before the appropriate Consumer Disputes Redressal Commission (District, State, or National) based on the value of the claim. Complaints can often be filed online through the official e-Jagriti portal or physically at the relevant commission."
+            },
+            {
+                question: "Can I file a complaint online?",
+                answer: "Yes. The official e-Jagriti portal allows consumers to file complaints electronically from anywhere. Through the portal you can typically submit documents, pay the applicable fee, and track the status of your case. Availability and exact steps may depend on the current portal guidelines."
+            },
+            {
+                question: "What documents do I need?",
+                answer: "Commonly useful documents include the purchase invoice or bill, warranty or guarantee card (if any), copies of communication with the seller or service provider, photographs or videos showing the defect or problem, and any other evidence that supports your claim. The exact documents required can vary depending on the nature of the dispute."
+            },
+            {
+                question: "What should I do before filing a complaint?",
+                answer: "It is generally advisable to: (1) clearly document the problem, (2) keep all related bills and communications, (3) contact the seller or service provider in writing and give them a reasonable chance to resolve the issue, and (4) note the dates of all actions taken. This preparation can strengthen your case if formal proceedings become necessary."
+            },
+            {
+                question: "What happens if my complaint is not resolved?",
+                answer: "If the seller or service provider does not resolve the issue after reasonable opportunity, you may approach the appropriate Consumer Commission. Depending on the value of the claim, the matter may go to the District, State, or National Commission. The commission can examine the evidence and, where appropriate, order remedies such as repair, replacement, refund, or compensation."
+            }
+        ],
+        legal: [
+            {
+                question: "Do I need a lawyer to file a complaint?",
+                answer: "No. Engaging a lawyer is not mandatory. The consumer protection framework is designed to be accessible so that individuals can file complaints and represent themselves. For more complex matters or higher-value claims, some people choose to seek legal advice, but it is not a legal requirement in every case."
+            },
+            {
+                question: "Can I represent myself before a Consumer Commission?",
+                answer: "Yes. Consumers are generally permitted to appear and present their own case before Consumer Commissions. The process is intended to be less formal than regular civil courts, making self-representation more practical for many individuals."
+            },
+            {
+                question: "When might legal advice be useful?",
+                answer: "Legal advice may be helpful in cases involving large claim amounts, complex facts, multiple parties, or technical legal questions. It can also be useful if the other side is represented by a lawyer. Whether to seek advice depends on the circumstances of each case and the individual’s comfort with the process."
+            }
+        ],
+        fees: [
+            {
+                question: "Is there a fee for filing a complaint?",
+                answer: "Yes, a filing fee is generally required. The amount usually depends on the value of the goods or services and the compensation claimed. For relatively smaller claims, the fee may be nil or very low under the applicable rules, making the process more accessible."
+            },
+            {
+                question: "How is the filing fee determined?",
+                answer: "Filing fees are typically linked to the total value of the claim (price of goods/services plus any compensation sought). The exact slab rates are set under the Consumer Protection Act and related rules. It is advisable to check the current fee schedule on the official e-Jagriti portal or with the relevant commission."
+            },
+            {
+                question: "Does the value of the dispute affect the Consumer Commission?",
+                answer: "Yes. The monetary value of the claim generally determines which commission has jurisdiction: District Commission for lower-value claims, State Commission for mid-range claims, and National Commission for higher-value claims. The current monetary limits should be verified from official sources as they can be revised."
+            },
+            {
+                question: "What is the difference between jurisdiction and filing fees?",
+                answer: "Jurisdiction refers to which Consumer Commission is empowered to hear a case (based mainly on the claim amount and sometimes the place of the transaction). Filing fees are the charges payable when submitting a complaint. Both are linked to the value of the dispute, but they serve different purposes—one decides the forum, the other is an administrative cost of filing."
+            }
+        ]
+    };
+
+    // Category display names and short descriptions
+    const categoryMeta = {
+        general: {
+            title: "General Questions",
+            subtitle: "Common questions about consumer rights and awareness."
+        },
+        filing: {
+            title: "Filing a Complaint",
+            subtitle: "Common questions about filing and resolving consumer complaints."
+        },
+        legal: {
+            title: "Legal Representation",
+            subtitle: "Questions about self-representation and when legal advice may help."
+        },
+        fees: {
+            title: "Fees & Costs",
+            subtitle: "Information about filing fees and how claim value affects the process."
+        }
+    };
+
+    // Render FAQ items for a given category
+    function renderFAQs(category) {
+        const container = document.getElementById('faqContainer');
+        const items = faqData[category] || [];
+
+        // Update heading
+        const meta = categoryMeta[category] || { title: "FAQs", subtitle: "" };
+        document.getElementById('categoryTitle').textContent = meta.title;
+        document.getElementById('categorySubtitle').textContent = meta.subtitle;
+
+        if (items.length === 0) {
+            container.innerHTML = '<div class="p-6 text-on-surface-variant">No questions available in this category.</div>';
+            return;
+        }
+
+        let html = '';
+        items.forEach((item) => {
+            html += `
+                <div class="accordion-item border-b border-primary/15 last:border-b-0">
+                    <button class="w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none hover:bg-surface-container-low transition-colors"
+                            onclick="toggleAccordion(this)">
+                        <span class="font-headline-md text-headline-md text-lg text-primary">${item.question}</span>
+                        <span class="material-symbols-outlined accordion-icon text-tertiary-container">expand_more</span>
+                    </button>
+                    <div class="accordion-content px-6 bg-surface-container-lowest text-on-surface-variant font-body-md text-body-md">
+                        <p>${item.answer}</p>
+                    </div>
+                </div>
+            `;
+        });
+
+        container.innerHTML = html;
+    }
+
+    // Accordion toggle – only one open at a time
+    function toggleAccordion(button) {
+        const item = button.parentElement;
+        const wasActive = item.classList.contains('active');
+
+        // Close all open items
+        document.querySelectorAll('.accordion-item.active').forEach(el => {
+            el.classList.remove('active');
+        });
+
+        // Open the clicked one if it was closed
+        if (!wasActive) {
+            item.classList.add('active');
+        }
+    }
+
+    // Category button click handler
+    function setupCategoryButtons() {
+        const buttons = document.querySelectorAll('.category-btn');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const category = this.getAttribute('data-category');
+
+                // Update active styles
+                buttons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Re-render FAQs (also updates the heading)
+                renderFAQs(category);
+            });
+        });
+    }
+
+    // Initialise on page load
+    document.addEventListener('DOMContentLoaded', function () {
+        renderFAQs('general');          // Default category
+        setupCategoryButtons();
+    });
+</script>
+{% endblock %}

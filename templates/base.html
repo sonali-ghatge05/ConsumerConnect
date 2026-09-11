@@ -16,7 +16,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-    <!-- Tailwind Config (identical across all pages) -->
+    <!-- Tailwind Config -->
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -121,6 +121,23 @@
         main {
             flex: 1;
         }
+
+        /* Search dropdown */
+        #searchResults {
+            box-shadow: 0 10px 25px -5px rgba(77, 7, 16, 0.12);
+        }
+        .search-result-item {
+            transition: background-color 0.15s ease;
+        }
+        .search-result-item:hover {
+            background-color: #f6f3f2;
+        }
+        .search-highlight {
+            background-color: #ffe08e;
+            color: #241a00;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
     </style>
 
     {% block extra_head %}{% endblock %}
@@ -131,6 +148,7 @@
     <!-- ========== TOP NAVBAR ========== -->
     <header class="bg-primary dark:bg-primary-container text-on-primary fixed top-0 w-full z-50 border-b border-outline-variant/20 shadow-sm transition-all duration-200 ease-in-out">
         <div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+
             <!-- Brand Logo -->
             <a class="font-headline-md text-headline-md font-bold text-white flex items-center gap-2" href="{{ url_for('home') }}">
                 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
@@ -152,19 +170,43 @@
                    href="{{ url_for('resources') }}">Resources</a>
 
                 <a class="{% if active_page == 'faqs' %}text-tertiary-fixed font-bold border-b-2 border-tertiary-fixed pb-1{% else %}text-on-primary/80 hover:text-white transition-colors hover:bg-primary-container/10 px-2 py-1 rounded{% endif %}"
-                   href="#">FAQs</a>
+                   href="{{ url_for('faqs') }}">FAQs</a>
+                
+                <a class="{% if active_page == 'about' %}text-tertiary-fixed font-bold border-b-2 border-tertiary-fixed pb-1{% else %}text-on-primary/80 hover:text-white transition-colors hover:bg-primary-container/10 px-2 py-1 rounded{% endif %}"
+                    href="{{ url_for('about') }}">About</a>
             </nav>
 
             <!-- Actions -->
             <div class="flex items-center gap-4">
-                <button class="text-on-primary/80 hover:text-white p-2 rounded hover:bg-primary-container/10 hidden md:block">
-                    <span class="material-symbols-outlined">search</span>
-                </button>
 
-                <a class="hidden md:inline-flex items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md px-4 py-2 rounded-full hover:bg-tertiary-fixed-dim transition-colors shadow-sm"
-                   href="#">
-                    File Complaint
-                </a>
+                <!-- Search -->
+                <div class="relative hidden md:block" id="searchWrapper">
+                    <div class="flex items-center bg-primary-container/20 hover:bg-primary-container/30 rounded-full transition-colors">
+                        <span class="material-symbols-outlined text-on-primary/80 pl-3 text-[20px]">search</span>
+                        <input type="text"
+                               id="siteSearch"
+                               placeholder="Search rights, categories, FAQs..."
+                               class="bg-transparent border-none outline-none text-on-primary placeholder:text-on-primary/60 text-sm font-label-md py-2 pr-4 pl-2 w-48 lg:w-64 focus:ring-0"
+                               autocomplete="off">
+                        <button id="clearSearch" class="hidden pr-3 text-on-primary/70 hover:text-white">
+                            <span class="material-symbols-outlined text-[18px]">close</span>
+                        </button>
+                    </div>
+
+                    <!-- Search Results Dropdown -->
+                    <div id="searchResults"
+                         class="hidden absolute right-0 mt-2 w-80 lg:w-96 bg-surface border border-outline-variant/30 rounded-xl shadow-lg overflow-hidden z-50 max-h-96 overflow-y-auto">
+                        <div class="px-4 py-3 border-b border-outline-variant/20 bg-surface-container-low">
+                            <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Search Results</p>
+                        </div>
+                        <div id="searchResultsList" class="divide-y divide-outline-variant/15">
+                            <!-- results injected here -->
+                        </div>
+                        <div id="noResults" class="hidden p-6 text-center text-on-surface-variant font-body-md">
+                            No results found
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Mobile Menu Toggle -->
                 <button class="md:hidden text-on-primary p-2">
@@ -202,6 +244,139 @@
             </div>
         </div>
     </footer>
+
+    <!-- ========== SITE SEARCH SCRIPT ========== -->
+    <script>
+    const SEARCH_INDEX = [
+        // Categories
+        { title: "Faulty Product", section: "Categories", description: "Defective goods, manufacturing flaws, or items not matching descriptions.", url: "/category/faulty-product", keywords: "faulty product defect defective goods manufacturing replacement refund repair" },
+        { title: "Service Deficiency", section: "Categories", description: "Inadequate services, delays, or failure to fulfill contractual obligations.", url: "/category/service-deficiency", keywords: "service deficiency delay inadequate poor service" },
+        { title: "Billing Fraud", section: "Categories", description: "Overcharging, hidden fees, unauthorized transactions, or fake invoices.", url: "/category/billing-fraud", keywords: "billing fraud overcharge hidden fees unauthorized charge invoice" },
+        { title: "E-commerce", section: "Categories", description: "Non-delivery of online orders, counterfeit items, or return policy violations.", url: "/category/e-commerce", keywords: "ecommerce online order non-delivery counterfeit return policy" },
+        { title: "Banking / Financial", section: "Categories", description: "Issues with loans, credit cards, insurance claims, or investment fraud.", url: "/category/banking-financial", keywords: "banking financial loan credit card insurance investment fraud" },
+        { title: "Other Grievances", section: "Categories", description: "Any other grievances falling under the Consumer Protection framework.", url: "/category/other", keywords: "other grievance miscellaneous" },
+
+        // Forum
+        { title: "District Commission", section: "Forum Checker", description: "Handles complaints where the value of goods or services does not exceed ₹50 Lakhs.", url: "/forum-checker", keywords: "district commission jurisdiction 50 lakh forum" },
+        { title: "State Commission", section: "Forum Checker", description: "Handles complaints where the value exceeds ₹50 Lakhs but does not exceed ₹2 Crores.", url: "/forum-checker", keywords: "state commission jurisdiction 2 crore forum" },
+        { title: "National Commission", section: "Forum Checker", description: "Apex body handling complaints where the value exceeds ₹2 Crores.", url: "/forum-checker", keywords: "national commission jurisdiction ncdrc forum" },
+
+        // Resources
+        { title: "National Consumer Helpline", section: "Resources", description: "Immediate assistance for consumer grievances. Call the toll-free number 1915.", url: "/resources", keywords: "helpline 1915 national consumer helpline call support" },
+        { title: "e-Daakhil Portal", section: "Resources", description: "Official online platform for filing consumer complaints electronically.", url: "/resources", keywords: "e-daakhil edaakhil online filing portal complaint" },
+        { title: "Consumer Mediation Cell", section: "Resources", description: "Alternative dispute resolution mechanism for amicable settlement.", url: "/resources", keywords: "mediation cell alternative dispute resolution amicable" },
+
+        // FAQ – General
+        { title: "What are consumer rights?", section: "FAQ – General", description: "Rights to safety, information, choice, to be heard, redressal and consumer education under the Consumer Protection Act, 2019.", url: "/faqs", keywords: "consumer rights safety information choice redressal" },
+        { title: "What qualifies as a valid consumer dispute?", section: "FAQ – General", description: "Defect in goods, deficiency in services, unfair trade practices, misleading advertisements, etc.", url: "/faqs", keywords: "valid dispute defect deficiency unfair trade practice" },
+        { title: "What is ConsumerConnect?", section: "FAQ – General", description: "A community engagement project to raise awareness about consumer rights in India.", url: "/faqs", keywords: "consumerconnect project awareness" },
+
+        // FAQ – Filing
+        { title: "How do I file a consumer complaint?", section: "FAQ – Filing", description: "First try resolving with the seller. If unresolved, file before the appropriate Consumer Commission or via e-Daakhil.", url: "/faqs", keywords: "file complaint how to process steps" },
+        { title: "Can I file a complaint online?", section: "FAQ – Filing", description: "Yes, through the official e-Daakhil / e-Jagriti portal from anywhere.", url: "/faqs", keywords: "online complaint e-daakhil e-jagriti filing" },
+        { title: "What documents do I need?", section: "FAQ – Filing", description: "Invoice/bill, warranty, communication records, photographs of the defect, and other supporting evidence.", url: "/faqs", keywords: "documents required invoice bill warranty evidence photos" },
+        { title: "What should I do before filing a complaint?", section: "FAQ – Filing", description: "Document the problem, keep bills, contact the seller in writing, and note all dates.", url: "/faqs", keywords: "before filing prepare documents notice" },
+
+        // FAQ – Legal
+        { title: "Do I need a lawyer to file a complaint?", section: "FAQ – Legal", description: "No. Consumers can file and represent themselves. A lawyer is optional.", url: "/faqs", keywords: "lawyer advocate legal representation self" },
+        { title: "Can I represent myself before a Consumer Commission?", section: "FAQ – Legal", description: "Yes. The process is designed to allow self-representation.", url: "/faqs", keywords: "self representation appear personally" },
+
+        // FAQ – Fees
+        { title: "Is there a fee for filing a complaint?", section: "FAQ – Fees", description: "A nominal fee is generally required and depends on the claim value. Smaller claims may have nil or very low fees.", url: "/faqs", keywords: "filing fee cost charge amount" },
+        { title: "How is the filing fee determined?", section: "FAQ – Fees", description: "Usually linked to the total value of the claim (price + compensation sought).", url: "/faqs", keywords: "fee determination slab value claim" },
+        { title: "Does the value of the dispute affect the Consumer Commission?", section: "FAQ – Fees", description: "Yes. Claim value decides whether the case goes to District, State or National Commission.", url: "/faqs", keywords: "jurisdiction value amount district state national" },
+
+        // Remedies / Process
+        { title: "Available Remedies", section: "Category Detail", description: "Repair, replacement, refund, and compensation for loss are common remedies under the Consumer Protection Act.", url: "/categories", keywords: "remedy repair replacement refund compensation" },
+        { title: "Complaint Process", section: "Category Detail", description: "Notice to seller → formal complaint → filing with Consumer Forum.", url: "/categories", keywords: "complaint process steps notice seller forum" }
+    ];
+
+    const searchInput   = document.getElementById('siteSearch');
+    const resultsBox    = document.getElementById('searchResults');
+    const resultsList   = document.getElementById('searchResultsList');
+    const noResults     = document.getElementById('noResults');
+    const clearBtn      = document.getElementById('clearSearch');
+    const searchWrapper = document.getElementById('searchWrapper');
+
+    function performSearch(query) {
+        query = query.trim().toLowerCase();
+
+        if (!query) {
+            resultsBox.classList.add('hidden');
+            clearBtn.classList.add('hidden');
+            return;
+        }
+
+        clearBtn.classList.remove('hidden');
+
+        const matches = SEARCH_INDEX.filter(item => {
+            const text = (item.title + ' ' + item.description + ' ' + item.section + ' ' + item.keywords).toLowerCase();
+            return text.includes(query);
+        });
+
+        resultsList.innerHTML = '';
+
+        if (matches.length === 0) {
+            noResults.classList.remove('hidden');
+            resultsBox.classList.remove('hidden');
+            return;
+        }
+
+        noResults.classList.add('hidden');
+
+        matches.slice(0, 8).forEach(item => {
+            const a = document.createElement('a');
+            a.href = item.url;
+            a.className = 'search-result-item block px-4 py-3 cursor-pointer';
+            a.innerHTML = `
+                <div class="flex justify-between items-start gap-2">
+                    <div>
+                        <p class="font-label-md text-label-md text-primary font-semibold">${highlight(item.title, query)}</p>
+                        <p class="font-label-sm text-label-sm text-tertiary mt-0.5">${item.section}</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1 line-clamp-2">${highlight(item.description, query)}</p>
+                    </div>
+                    <span class="material-symbols-outlined text-outline text-[18px] mt-1">chevron_right</span>
+                </div>
+            `;
+            resultsList.appendChild(a);
+        });
+
+        resultsBox.classList.remove('hidden');
+    }
+
+    function highlight(text, query) {
+        if (!query) return text;
+        const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+        return text.replace(regex, '<span class="search-highlight">$1</span>');
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', e => performSearch(e.target.value));
+        searchInput.addEventListener('focus', () => {
+            if (searchInput.value.trim()) performSearch(searchInput.value);
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                resultsBox.classList.add('hidden');
+                searchInput.blur();
+            }
+        });
+
+        document.addEventListener('click', e => {
+            if (!searchWrapper.contains(e.target)) {
+                resultsBox.classList.add('hidden');
+            }
+        });
+
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            resultsBox.classList.add('hidden');
+            clearBtn.classList.add('hidden');
+            searchInput.focus();
+        });
+    }
+    </script>
 
     {% block extra_scripts %}{% endblock %}
 </body>
