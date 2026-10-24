@@ -1,7 +1,15 @@
 {
   "faulty-product": {
+    "id": "faulty-product",
     "name": "Faulty Product",
-    "description": "Issues involving defective, damaged, unsafe or poor-quality products.",
+    "description": "Issues involving defective, damaged, unsafe, poor-quality, or incorrectly supplied products. You can complain directly to the seller/company or via the National Consumer Helpline portal.",
+    "what_you_need": [
+      "Proof of purchase (receipt, invoice, order confirmation)",
+      "Product details (brand, model, serial number, colour)",
+      "Evidence of damage (photos/videos of the defect)",
+      "Warranty card (physical or digital)",
+      "Your contact information"
+    ],
     "process": [
       {
         "step": 1,
@@ -78,12 +86,22 @@
         "text": "Contains provisions relating to the quality, fitness and sale of goods."
       }
     ],
-    "sample_letter": "I purchased [PRODUCT] from [SELLER] on [DATE]. The product has the following defect: [DESCRIBE ISSUE]. I request that the issue be resolved by [REPAIR / REPLACEMENT / REFUND]."
+    "sample_letter": {
+      "subject": "Complaint Regarding Faulty / Defective Product – Request for Refund / Replacement",
+      "body": "To,\nThe Grievance Redressal Officer\n[Company / Seller Name]\n[Company Address]\n\nSubject: Complaint Regarding Faulty / Defective Product – Order/Invoice No. [Order/Invoice Number]\n\nRespected Sir/Madam,\n\nI am writing to formally lodge a complaint regarding a faulty product that I purchased from your company.\n\nThe details of the purchase and the issue are as follows:\n\n• Product Name          : [Product Name]\n• Brand / Model         : [Brand Name / Model Number]\n• Order / Invoice No.   : [Order or Invoice Number]\n• Date of Purchase      : [Date of Purchase]\n• Amount Paid           : ₹[Amount]\n• Mode of Purchase      : [Online / Offline – Store Name]\n\nDescription of the Problem:\nI received the above-mentioned product on [Delivery Date]. Upon unpacking and using the product, I found that it is defective / damaged / not working properly. The specific issues are:\n\n1. [Clearly describe the defect – e.g., the product does not switch on, screen is cracked, motor is making noise, etc.]\n2. [Any other problem observed]\n\nI have attached the following supporting documents for your reference:\n• Copy of Invoice / Bill\n• Photographs / Video of the defective product\n• Warranty Card (if applicable)\n• Order confirmation / Payment receipt\n\nI had already contacted your customer care on [Date] (Ticket No. [if any]), but the issue has not been resolved satisfactorily till date.\n\nAs the product is defective and does not match the quality promised, I request you to kindly take the following action at the earliest:\n\n☐ Full Refund of ₹[Amount]\n☐ Replacement with a new product of the same model\n☐ Free Repair under warranty\n\nI request you to resolve this matter within 7–10 working days. If I do not receive a satisfactory response, I will be constrained to escalate the complaint to the National Consumer Helpline / Consumer Forum under the Consumer Protection Act, 2019.\n\nThanking you,\n\nYours faithfully,\n\n[Your Full Name]\n[Your Full Address]\nMobile: [Your Mobile Number]\nEmail: [Your Email Address]\nDate: [Today’s Date]"
+    }
   },
-
   "service-deficiency": {
+    "id": "service-deficiency",
     "name": "Service Deficiency",
-    "description": "Issues arising from inadequate, delayed, incomplete or deficient services.",
+    "description": "Issues arising from inadequate, delayed, incomplete or deficient services provided by a company or professional.",
+    "what_you_need": [
+      "Proof of transaction (receipts, invoices, booking confirmations)",
+      "Service agreement / contract / warranty cards",
+      "Payment proof (bank statements, UPI screenshots, credit card bills)",
+      "Written complaints, chat transcripts, call logs, and company responses",
+      "Formal written complaint with your details, opposite party details, facts (with dates), and demanded relief"
+    ],
     "process": [
       {
         "step": 1,
@@ -152,12 +170,21 @@
         "text": "Provides protection against deficiency in services and establishes mechanisms for consumer dispute redressal."
       }
     ],
-    "sample_letter": "I availed [SERVICE] from [SERVICE PROVIDER] on [DATE]. The service was deficient because [DESCRIBE ISSUE]. I request [REMEDY]."
+    "sample_letter": {
+      "subject": "Complaint Regarding Deficiency in Service – Request for Refund / Compensation",
+      "body": "To,\nThe Grievance Redressal Officer\n[Company / Service Provider Name]\n[Company Address]\n\nSubject: Complaint Regarding Deficiency in Service – Reference No. [Booking/Invoice Number]\n\nRespected Sir/Madam,\n\nI am writing to formally lodge a complaint regarding severe deficiency in the service provided by your company.\n\nThe details are as follows:\n\n• Service Availed        : [Name of Service]\n• Booking / Invoice No.  : [Booking or Invoice Number]\n• Date of Service        : [Date]\n• Amount Paid            : ₹[Amount]\n\nDescription of the Deficiency:\nDespite making the full payment on [Date], the service provided was incomplete / delayed / of very poor quality because:\n\n1. [Clearly describe what went wrong – e.g., service not completed on time, poor workmanship, staff behaviour, etc.]\n2. [Any other issue]\n\nI have already raised the matter with your customer care on [Date] (Ticket/Complaint No. [if any]), but no satisfactory resolution has been provided.\n\nI request you to kindly:\n\n☐ Provide a full refund of ₹[Amount]\n☐ Complete the service properly at the earliest\n☐ Pay compensation for the inconvenience and mental agony caused\n\nI have attached all relevant documents (invoice, payment proof, previous communications, photos/videos if any).\n\nPlease resolve this issue within 7–10 working days, failing which I shall be forced to approach the Consumer Forum under the Consumer Protection Act, 2019.\n\nThanking you,\n\nYours faithfully,\n\n[Your Full Name]\n[Your Full Address]\nMobile: [Your Mobile Number]\nEmail: [Your Email Address]\nDate: [Today’s Date]"
+    }
   },
-
   "billing-fraud": {
+    "id": "billing-fraud",
     "name": "Billing Fraud",
-    "description": "Problems involving incorrect, unauthorized, duplicate or misleading billing and charges.",
+    "description": "Problems involving incorrect, unauthorized, duplicate or misleading billing and charges. This is a serious financial scam and can be a criminal offence.",
+    "what_you_need": [
+      "Identity & account details (name, contact, customer ID/account number, government ID if needed)",
+      "Disputed bill/invoice, bank/credit card statements, original agreements/receipts",
+      "Communication records (emails, chats, call logs)",
+      "Written complaint letter with timeline, exact amount, and demand for refund/cancellation"
+    ],
     "process": [
       {
         "step": 1,
@@ -180,7 +207,7 @@
       {
         "step": 4,
         "title": "Escalate if unresolved",
-        "description": "If the issue remains unresolved, use an appropriate grievance or consumer forum mechanism.",
+        "description": "If the issue remains unresolved, use an appropriate grievance or consumer forum mechanism (bank charge dispute, company grievance officer, consumer forums, cyber police if online scam).",
         "time": "After allowing reasonable response time"
       }
     ],
@@ -226,12 +253,28 @@
         "text": "Protects consumers against unfair trade practices including incorrect or misleading billing."
       }
     ],
-    "sample_letter": "I received a bill/invoice from [BUSINESS] dated [DATE] containing the following incorrect or unauthorized charge: [DESCRIBE CHARGE]. I request correction of the bill and [REFUND / OTHER REMEDY]."
+    "where_to_file": [
+      "Bank/Credit Card Company (charge dispute or billing error)",
+      "Company's Grievance Officer",
+      "Consumer Protection Forums / Consumer Court",
+      "Cyber Crime / Police (if identity theft or online scam)"
+    ],
+    "sample_letter": {
+      "subject": "Complaint Regarding Billing Fraud / Incorrect Charges – Request for Immediate Refund",
+      "body": "To,\nThe Grievance Redressal Officer\n[Company / Service Provider Name]\n[Company Address]\n\nSubject: Complaint Regarding Billing Fraud / Incorrect / Unauthorized Charges – Bill No. [Bill Number]\n\nRespected Sir/Madam,\n\nI am writing to formally complain about incorrect / unauthorized / fraudulent charges levied by your company.\n\nThe details are as follows:\n\n• Account / Customer ID  : [Your Account or Customer ID]\n• Bill / Invoice Number  : [Bill Number]\n• Bill Date              : [Date of Bill]\n• Disputed Amount        : ₹[Amount]\n\nNature of the Fraud / Error:\nThe bill contains the following incorrect / unauthorized charges:\n\n1. [Describe the wrong charge – e.g., charged for services not availed, duplicate charges, inflated amount, etc.]\n2. [Any other discrepancy]\n\nI have never authorized these charges. I have attached the following documents:\n• Copy of the disputed bill\n• Bank / Credit Card statement showing the deduction\n• Previous correct bills (for comparison)\n• All previous communications with your team\n\nI request you to immediately:\n\n☐ Cancel the fraudulent / incorrect charges\n☐ Refund the excess amount of ₹[Amount] to my account\n☐ Issue a corrected bill\n\nPlease resolve this matter within 7 working days. If no satisfactory action is taken, I will escalate the matter to the Consumer Forum / Cyber Crime Cell / Police under the Consumer Protection Act, 2019.\n\nThanking you,\n\nYours faithfully,\n\n[Your Full Name]\n[Your Full Address]\nMobile: [Your Mobile Number]\nEmail: [Your Email Address]\nDate: [Today’s Date]"
+    }
   },
-
   "e-commerce": {
-    "name": "E-commerce",
-    "description": "Consumer issues related to online purchases, sellers, delivery, refunds, returns or digital transactions.",
+    "id": "e-commerce",
+    "name": "E-Commerce",
+    "description": "Consumer issues related to online purchases, sellers, delivery, refunds, returns or digital transactions (non-delivery, wrong/damaged products, refunds, returns, cancellations, payment problems).",
+    "what_you_need": [
+      "Proof of purchase (order ID, invoice, receipt)",
+      "Payment details (transaction ID, bank statement, screenshot)",
+      "Product evidence (photos/videos of defective/wrong item)",
+      "Communication history (chats, emails, call logs)",
+      "Personal details (registered name, phone, email)"
+    ],
     "process": [
       {
         "step": 1,
@@ -308,12 +351,20 @@
         "text": "Lays down duties of e-commerce entities and marketplace sellers."
       }
     ],
-    "sample_letter": "I placed order [ORDER ID] for [PRODUCT] from [PLATFORM/SELLER] on [DATE]. The issue is [DESCRIBE ISSUE]. I request [REFUND / REPLACEMENT / OTHER REMEDY]."
+    "sample_letter": {
+      "subject": "Complaint Regarding Order ID [Order Number] – Request for Refund / Replacement",
+      "body": "To,\nThe Grievance Redressal Officer / Customer Support\n[Platform / Seller Name]\n\nSubject: Complaint Regarding Order ID [Your Order Number] – [Damaged / Wrong / Not Delivered Product]\n\nRespected Sir/Madam,\n\nI am writing to lodge a formal complaint regarding my recent online purchase.\n\nOrder Details:\n• Order ID              : [Your Order Number]\n• Product Name          : [Product Name]\n• Date of Order         : [Date of Order]\n• Amount Paid           : ₹[Amount]\n• Platform / Seller     : [Amazon / Flipkart / Other]\n\nIssue Faced:\n[Choose and write clearly]\n• I received a damaged / defective product\n• I received the wrong item\n• My order has not been delivered yet\n• Refund has not been processed\n\nI have already contacted your customer support multiple times (Chat/Ticket No. [if any]), but the issue remains unresolved.\n\nI have attached:\n• Invoice / Order confirmation\n• Payment proof\n• Photographs / Video of the product (if applicable)\n• Screenshots of previous chats\n\nI request you to kindly:\n\n☐ Arrange full refund of ₹[Amount] immediately\n☐ Send a replacement of the correct product\n☐ Process the return and refund as per policy\n\nPlease resolve this matter within 5–7 working days. If not resolved, I will escalate the complaint to the National Consumer Helpline and Consumer Forum under the Consumer Protection Act, 2019 and E-Commerce Rules, 2020.\n\nThanking you,\n\nYours faithfully,\n\n[Your Full Name]\nMobile: [Your Mobile Number]\nEmail: [Your Email Address]\nDate: [Today’s Date]"
+    }
   },
-
   "banking-financial": {
+    "id": "banking-financial",
     "name": "Banking / Financial",
-    "description": "Consumer issues involving banking or financial services, unauthorized transactions, charges, loans or related deficiencies.",
+    "description": "Consumer issues involving banking or financial services, unauthorized transactions, charges, loans, cards, accounts and other banking-related deficiencies.",
+    "what_you_need": [
+      "Personal & account details (full name, account number, Customer ID/CIF, registered mobile & email)",
+      "Transaction details (date & time, amount, transaction ID/reference number, beneficiary details if applicable)",
+      "Supporting documents (bank statement/passbook with highlight, screenshots, ATM/merchant receipts, previous communications)"
+    ],
     "process": [
       {
         "step": 1,
@@ -330,13 +381,13 @@
       {
         "step": 3,
         "title": "Contact the bank / provider",
-        "description": "Raise a formal complaint through the bank’s grievance redressal system or customer care.",
+        "description": "Raise a formal complaint through the bank’s grievance redressal system or customer care (toll-free, branch, or mobile app).",
         "time": "Depends on response"
       },
       {
         "step": 4,
         "title": "Escalate if unresolved",
-        "description": "If not resolved, approach the Banking Ombudsman, RBI or the appropriate consumer forum.",
+        "description": "Escalate step-by-step: Grievance Redressal Officer (GRO) → Principal Nodal Officer (PNO) → RBI Banking Ombudsman (cms.rbi.org.in) if no reply within 30 days or unsatisfactory response.",
         "time": "After allowing reasonable response time"
       }
     ],
@@ -386,12 +437,21 @@
         "text": "Provides an alternative grievance redressal mechanism for banking customers."
       }
     ],
-    "sample_letter": "I am writing regarding [TRANSACTION/SERVICE] dated [DATE] involving [BANK/FINANCIAL SERVICE PROVIDER]. The issue is [DESCRIBE ISSUE]. I request [REMEDY]."
+    "sample_letter": {
+      "subject": "Complaint Regarding Unauthorized Transaction / Banking Deficiency – Request for Immediate Reversal",
+      "body": "To,\nThe Grievance Redressal Officer\n[Bank Name]\n[Branch Address / Head Office Address]\n\nSubject: Complaint Regarding Unauthorized Transaction / Incorrect Charges – Account No. [Your Account Number]\n\nRespected Sir/Madam,\n\nI am a customer of your bank holding Account No. [Your Account Number] (Customer ID / CIF: [CIF Number]).\n\nI wish to lodge a formal complaint regarding the following issue:\n\n• Date & Time of Transaction : [Date and Time]\n• Transaction Amount         : ₹[Amount]\n• Transaction ID / UTR       : [Transaction Reference Number]\n• Nature of Problem          : [Unauthorized transaction / Wrong charges / Failed transaction but amount debited / etc.]\n\nDescription:\n[Clearly explain what happened – e.g., money was debited without my authorization, double deduction, service not provided but charged, etc.]\n\nI have already reported this issue to customer care on [Date] (Complaint/Ticket No. [if any]), but no satisfactory resolution has been received.\n\nI request you to kindly:\n\n☐ Immediately reverse / refund the amount of ₹[Amount]\n☐ Correct my account records\n☐ Provide compensation for the mental harassment and financial loss caused\n\nI have attached:\n• Bank statement highlighting the disputed transaction\n• SMS / Email alerts\n• Screenshots of the transaction\n• Copy of previous complaint\n\nPlease resolve this matter urgently. If not resolved within the stipulated time, I will escalate the complaint to the Principal Nodal Officer and thereafter to the RBI Banking Ombudsman (cms.rbi.org.in).\n\nThanking you,\n\nYours faithfully,\n\n[Your Full Name]\nAccount No.: [Your Account Number]\nMobile: [Your Registered Mobile Number]\nEmail: [Your Registered Email]\nDate: [Today’s Date]"
+    }
   },
-
   "other": {
+    "id": "other",
     "name": "Other",
     "description": "For consumer issues that do not clearly fit into the categories above.",
+    "what_you_need": [
+      "Bill / Invoice / Receipt",
+      "Agreement or terms (if any)",
+      "Photographs or screenshots",
+      "Communication records"
+    ],
     "process": [
       {
         "step": 1,
@@ -460,6 +520,9 @@
         "text": "Provides overall protection to consumers and mechanisms for dispute redressal."
       }
     ],
-    "sample_letter": "I am writing regarding [PRODUCT/SERVICE] obtained from [BUSINESS] on [DATE]. The issue is [DESCRIBE ISSUE]. I request [REMEDY]."
+    "sample_letter": {
+      "subject": "Consumer Complaint – Request for Resolution",
+      "body": "To,\nThe Grievance Redressal Officer\n[Company / Organization Name]\n[Address]\n\nSubject: Consumer Complaint Regarding [Brief Description of Issue]\n\nRespected Sir/Madam,\n\nI am writing to formally raise a consumer complaint regarding the following issue:\n\n• Product / Service      : [Name]\n• Date of Purchase / Service : [Date]\n• Amount Involved        : ₹[Amount]\n• Invoice / Reference No.: [Number]\n\nDescription of the Problem:\n[Write a clear and detailed description of what went wrong, including dates and what you expected versus what actually happened.]\n\nI have already contacted your team on [Date], but the issue remains unresolved.\n\nI request you to kindly look into this matter and provide an appropriate resolution such as:\n\n☐ Full Refund\n☐ Replacement / Repair / Correction\n☐ Compensation for the inconvenience caused\n\nI have attached all relevant supporting documents (bills, photos, communication records, etc.).\n\nPlease resolve this complaint at the earliest. If no satisfactory action is taken, I will be constrained to approach the Consumer Forum under the Consumer Protection Act, 2019.\n\nThanking you,\n\nYours faithfully,\n\n[Your Full Name]\n[Your Full Address]\nMobile: [Your Mobile Number]\nEmail: [Your Email Address]\nDate: [Today’s Date]"
+    }
   }
 }

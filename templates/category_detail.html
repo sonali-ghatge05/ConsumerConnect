@@ -151,19 +151,31 @@
                         {% endfor %}
                     </ul>
                 </div>
+<!-- Template Panel -->
+<div class="hidden bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-6 shadow-sm" id="template-panel">
+    <h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center justify-between">
+        Draft Complaint Notice
+        <button class="text-outline hover:text-primary" onclick="toggleAccordion('template-panel')">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </h3>
 
-                <!-- Template Panel -->
-                <div class="hidden bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-6 shadow-sm" id="template-panel">
-                    <h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center justify-between">
-                        Draft Complaint Notice
-                        <button class="text-outline hover:text-primary" onclick="toggleAccordion('template-panel')">
-                            <span class="material-symbols-outlined">close</span>
-                        </button>
-                    </h3>
-                    <div class="bg-surface-container p-6 rounded font-mono text-sm overflow-x-auto whitespace-pre-wrap text-on-surface-variant">
-{{ category.sample_letter }}
-                    </div>
-                </div>
+    <div class="bg-surface-container p-6 rounded text-sm overflow-x-auto text-on-surface-variant leading-relaxed">
+        
+        <!-- Subject -->
+        <p class="font-semibold text-base mb-3 text-primary">
+            <strong>Subject:</strong> {{ category.sample_letter.subject }}
+        </p>
+
+        <hr class="my-4 border-outline-variant/40">
+
+        <!-- Letter Body -->
+        <div class="whitespace-pre-line font-serif text-[15px] leading-7">
+{{ category.sample_letter.body }}
+        </div>
+
+    </div>
+</div>
             </section>
 
             <!-- Final CTA -->
